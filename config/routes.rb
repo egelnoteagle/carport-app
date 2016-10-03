@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  get '/vehicles' => 'vehicles#index'
+  get '/mygarage' => 'vehicles#index'
+  get '/vehicles/:id' => 'vehicles#show'
 end
