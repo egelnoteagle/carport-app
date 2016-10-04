@@ -2,15 +2,14 @@
 
 <div class="row">
   <% @vehicles.each do |vehicle| %>
-    <div>
-      <h3><%= vehicle.vehicle_nickname %></h3>
-      <h3><%= vehicle.make %></h3>
-      <h3><%= vehicle.model %></h3>
-      <h3><%= vehicle.year %></h3>
-      <h3><%= vehicle.trim %></h3>
-      <h3><%= vehicle.style %></h3>
-      <h3><%= vehicle.color %></h3>
-      <h3><%= vehicle.vin_num %></h3>
+    <div class="col-md-4">
+      <h3><%= vehicle.vehicle_nickname %> </h3>
+      <h4><%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model %> </h4>
+      <h4><%= vehicle.trim %></h4>
+      <h4><%= vehicle.style %></h4>
+      <h4><%= vehicle.color %></h4>
+      <h4><%= vehicle.license_state %> <%= vehicle.license_number %></h4>
+      <h4><%= vehicle.vin_num %></h4>
     </div>
   <% end %>
 </div>
