@@ -3,7 +3,7 @@
 <div class="row">
   <% @vehicles.each do |vehicle| %>
     <div class="col-md-4">
-      <h3><%= vehicle.vehicle_nickname %> </h3>
+      <h3><%= link_to vehicle.vehicle_nickname, "/vehicles/#{vehicle.id}" %> </h3>
       <h4><%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model %> </h4>
       <h4><%= vehicle.trim %></h4>
       <h4><%= vehicle.style %></h4>
