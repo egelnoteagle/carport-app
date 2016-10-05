@@ -1,8 +1,11 @@
 <h1><%= @vehicle.vehicle_nickname %> </h1>
 <br>
-<h4><%= @vehicle.year %> <%= @vehicle.make %> <%= @vehicle.model %> </h4>
-<h4><%= @vehicle.trim %></h4>
-<h4><%= @vehicle.style %></h4>
-<h4><%= @vehicle.color %></h4>
-<h4><%= @vehicle.license_state %> <%= @vehicle.license_number %></h4>
-<h4><%= @vehicle.vin_num %></h4>
+<h4>Vehicle: <%= @vehicle.year %> <%= @vehicle.make %> <%= @vehicle.model %> </h4>
+<h4>Trim: <%= @vehicle.trim %></h4>
+<h4>Style: <%= @vehicle.style %></h4>
+<h4>Color: <%= @vehicle.color %></h4>
+<h4>License Plate: <%= @vehicle.license_state %> <%= @vehicle.license_number %></h4>
+<h4>Vin Number: <%= @vehicle.vin_num %></h4>
+<br>
+<a class="btn btn-primary btn-xs" href= "<%= "/vehicles/#{@vehicle.id}/edit" %>" role="button">Edit Vehicle Details</a>
+<%= link_to 'Delete Vehicle', "/vehicles/#{@vehicle.id}", method: :delete %>
