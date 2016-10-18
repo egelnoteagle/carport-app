@@ -28,9 +28,16 @@ before_action :authenticate_user!
                         user_id: current_user.id
                         )
     @vehicle.save
+    @vehicle_id = @vehicle.id
+
+    @mileage = Mileage.new(
+                           mileage_reading: params[:mileage_reading],
+                           vehicle_id: @vehicle_id)
+    @mileage.save
 
     flash[:success] = "New Vehicle Saved!"
     redirect_to "/vehicles/#{@vehicle.id}"
+
   end
 
   def edit
