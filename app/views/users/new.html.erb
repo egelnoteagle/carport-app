@@ -1,8 +1,8 @@
 <h1>Create Your New Garage</h1>
 <%= form_tag '/users', method: :post do %>
   <div>
-    <%= label_tag :user_name %>
-    <%= text_field_tag :user_name %>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
   </div>
   <div>
     <%= label_tag :password %>
@@ -21,10 +21,7 @@
     <%= label_tag :last_name %>
     <%= text_field_tag :last_name %>
   </div>
-  <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
-  </div>
+  
   <div>
     <%= label_tag :address %>
     <%= text_field_tag :address %>

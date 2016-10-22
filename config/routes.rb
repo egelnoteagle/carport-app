@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/' => 'sessions#new'
   get '/mygarage' => 'vehicles#index'
   get '/vehicles/new' => 'vehicles#new'
   post '/vehicles' => 'vehicles#create'
