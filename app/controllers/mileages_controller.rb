@@ -5,5 +5,7 @@ class MileagesController < ApplicationController
                                               )
 
     @mileage.save
+
+    flash[:success] = "Mileage Updated"
   end
 end
