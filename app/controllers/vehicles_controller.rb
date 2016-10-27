@@ -7,7 +7,6 @@ before_action :authenticate_user!
 
   def show
     @vehicle = Vehicle.find(params[:id])
-    @vehicle_vin = Unirest.get("https://api.edmunds.com/api/v1/vehicle/vin/5nmsh73e28h134067  /configuration?api_key=5bkyhw5tggbtfavjravs5hrd").body
   end
 
   def new

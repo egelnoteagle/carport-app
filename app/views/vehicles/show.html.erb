@@ -6,10 +6,19 @@
 <h4>Color: <%= @vehicle.color %></h4>
 <h4>License Plate: <%= @vehicle.license_state %> <%= @vehicle.license_number %></h4>
 <h4>Vin Number: <%= @vehicle.vin_num %></h4>
-<h4>Mileage: <%= @vehicle.mileages.last.mileage_reading %></h4>
+
+
+<%= form_tag '/mileages', method: :post do %>
+<%= hidden_field_tag :vehicle_id, @vehicle.id %>
+<h4>Mileage: <%= text_field_tag :mileage_reading, @vehicle.mileages.last.mileage_reading %></h4>
+<div>
+    <%= submit_tag "Submit New Mileage" %>
+  </div>
+<% end %>
+
 <br>
 <a class="btn btn-primary btn-xs" href= "<%= "/vehicles/#{@vehicle.id}/edit" %>" role="button">Edit Vehicle Details</a>
-<a class="btn btn-primary btn-xs" href= "<%= "/vehicles/#{@vehicle.id}/edit" %>" role="button">Edit Vehicle Service Options</a>
+
 <%= link_to 'Delete Vehicle', "/vehicles/#{@vehicle.id}", method: :delete, class:  "btn btn-default btn-xs" %>
 
 <br>

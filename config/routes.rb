@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/' => 'sessions#new'
+
   get '/mygarage' => 'vehicles#index'
   get '/vehicles/new' => 'vehicles#new'
   post '/vehicles' => 'vehicles#create'
@@ -14,4 +15,6 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+
+  post '/mileages' => 'mileages#create' 
 end
