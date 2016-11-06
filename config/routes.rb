@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   post '/mileages' => 'mileages#create' 
+
+  get '/recalls' => 'recalls#index'
 end

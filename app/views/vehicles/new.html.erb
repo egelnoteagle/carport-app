@@ -6,13 +6,14 @@
     <%= text_field_tag :vehicle_nickname %>
   </div>
   <div>
-    <%= label_tag :vin_num %>
+    <%= label_tag 'VIN Number: ' %>
     <%= text_field_tag :vin_num %>
   </div>
   <div>
     <%= label_tag :color %>
     <%= text_field_tag :color %>
   <div>
+    <%= label_tag 'License Plate State: ' %>
     <%= select_tag :license_state, options_for_select(us_states) %>
   </div>
   <div>
