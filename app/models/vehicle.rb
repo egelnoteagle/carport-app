@@ -1,6 +1,6 @@
 class Vehicle < ApplicationRecord
 
-  validates :mileage_reading, presence: true
+  # validates :mileage_reading, presence: true
 
   belongs_to :user
   has_many :mileages
