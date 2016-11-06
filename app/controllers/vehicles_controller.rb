@@ -14,11 +14,12 @@ before_action :authenticate_user!
   end
 
   def create
+    @vin = Unirest.get("https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/#{params[:vin_num]}*BA?format=json").body
     @vehicle = Vehicle.new(
-                        make: params[:make],
-                        model: params[:model], 
-                        year: params[:year],
-                        trim: params[:trim],
+                        make: @vin["Results"][5]["Value"].titleize,
+                        model: @vin["Results"][7]["Value"], 
+                        year: @vin["Results"][8]["Value"],
+                        trim: @vin["Results"][11]["Value"],
                         style: params[:style],
                         color: params[:color],
                         vin_num: params[:vin_num],
