@@ -70,4 +70,9 @@ before_action :authenticate_user!
     flash[:warning] = "Vehicle Removed"
     redirect_to "/mygarage"
   end
+
+  def recalls
+    @vehicle = Vehicle.find(params[:id])
+    @recalls = @vehicle.recall_list
+  end
 end

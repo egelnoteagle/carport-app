@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/vehicles/new' => 'vehicles#new'
   post '/vehicles' => 'vehicles#create'
   get '/vehicles/:id' => 'vehicles#show'
+  get '/vehicles/:id/recalls' => 'vehicles#recalls'
   get '/vehicles/:id/edit' => 'vehicles#edit'
   patch '/vehicles/:id' => 'vehicles#update'
   delete '/vehicles/:id' => 'vehicles#destroy'
@@ -17,6 +18,4 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   post '/mileages' => 'mileages#create' 
-
-  get '/recalls' => 'recalls#index'
 end
