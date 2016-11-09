@@ -1,18 +1,18 @@
-<h1><%= current_user.first_name %>'s Garage</h1>
+<h3><%= current_user.first_name %>'s Garage</h3>
 <div class="row">
   <% @vehicles.each do |vehicle| %>
     <div class="col-md-4">
-      <h3><%= link_to vehicle.vehicle_nickname, "/vehicles/#{vehicle.id}" %> </h3>
-      <h4>Vehicle:  <%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model %> </h4>
-      <h4>Trim: <%= vehicle.trim %></h4>
-      <h4>Style: <%= vehicle.style %></h4>
-      <h4>Color: <%= vehicle.color %></h4>
-      <h4>License: <%= vehicle.license_state %> <%= vehicle.license_number %></h4>
-      <h4>VIN #: <%= vehicle.vin_num %></h4>
+      <h4><%= link_to vehicle.vehicle_nickname, "/vehicles/#{vehicle.id}" %> </h4>
+      <h5>Vehicle:  <%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model %> </h5>
+      <h5>Trim: <%= vehicle.trim %></h5>
+      <h5>Style: <%= vehicle.style %></h5>
+      <h5>Color: <%= vehicle.color %></h5>
+      <h5>License: <%= vehicle.license_state %> <%= vehicle.license_number %></h5>
+      <h5>VIN #: <%= vehicle.vin_num %></h5>
     </div>
   <% end %>
 </div>
 <br>
 <div>
-  <a class="btn btn-primary btn-lg" href="/vehicles/new" role="button">Add New Vehicle</a>
+  <a class="btn btn-primary btn-sm" href="/vehicles/new" role="button">Add New Vehicle</a>
 </div>

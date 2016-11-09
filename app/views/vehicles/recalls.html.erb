@@ -1,5 +1,13 @@
 <h3>Recalls for <%= @vehicle.year %> <%= @vehicle.make %> <%= @vehicle.model %>:</h3>
 
-<%= @vehicle.recall_list.each do |recall| %>
-
+<% @recall.each do | recall_item | %>
+  <ul>
+    <li><b>Manufacturer: </b><%= recall_item.manufacturer %></li>
+    <li><b>Component: </b><%= recall_item.component.titleize %></li>
+    <li><b>Summary: </b><%= recall_item.summary.titleize %></li>
+    <li><b>Consequence: </b><%= recall_item.conequence.titleize %></li>
+    <li><b>What To Do: </b><%= recall_item.remedy.titleize %></li>
+    <li><b>Notes:  </b><%= recall_item.notes.titleize %></li>
+  </ul>
+  <br>
 <% end %>

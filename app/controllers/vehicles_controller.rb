@@ -73,6 +73,6 @@ before_action :authenticate_user!
 
   def recalls
     @vehicle = Vehicle.find(params[:id])
-    @recalls = @vehicle.recall_list
+    @recall = @vehicle.recall_list
   end
 end

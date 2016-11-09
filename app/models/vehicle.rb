@@ -17,10 +17,13 @@ class Vehicle < ApplicationRecord
     compared_mileages[1].mileage_reading - compared_mileages[0].mileage_reading
   end
 
-  def self.recall_list
+  def recall_list
     collection = []
-    Unirest.get("http://www.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/#{:year}/make/#{:make}/model/#{:model}?format=json").body.each do |recall_hash|
-      collection << Recall.new(recall_hash)
+    if year && model && make
+      results =  Unirest.get("http://www.nhtsa.gov/webapi/api/recalls/vehicle/modelyear/#{year}/make/#{make}/model/#{model}?format=json").body["Results"]
+      results.each do |recall_hash|
+        collection << Recall.new(recall_hash)
+      end
     end
     collection
   end
