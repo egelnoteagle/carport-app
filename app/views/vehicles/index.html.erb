@@ -2,13 +2,15 @@
 <div class="row">
   <% @vehicles.each do |vehicle| %>
     <div class="col-md-4">
-      <h4><%= link_to vehicle.vehicle_nickname, "/vehicles/#{vehicle.id}" %> </h4>
-      <h5>Vehicle:  <%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model %> </h5>
-      <h5>Trim: <%= vehicle.trim %></h5>
-      <h5>Style: <%= vehicle.style %></h5>
-      <h5>Color: <%= vehicle.color %></h5>
-      <h5>License: <%= vehicle.license_state %> <%= vehicle.license_number %></h5>
-      <h5>VIN #: <%= vehicle.vin_num %></h5>
+      <ul>
+        <li><h4><%= link_to vehicle.vehicle_nickname, "/vehicles/#{vehicle.id}" %></h4></li>
+        <li><b>Vehicle:  </b><%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model %> </li>
+        <li><b>Trim: </b><%= vehicle.trim %></li>
+        <li><b>Style: </b><%= vehicle.style %></li>
+        <li><b>Color: </b><%= vehicle.color %></li>
+        <li><b>License: </b><%= vehicle.license_state %> <%= vehicle.license_number %></li>
+        <li><b>VIN #: </b><%= vehicle.vin_num %><</li>
+      </ul>
     </div>
   <% end %>
 </div>
