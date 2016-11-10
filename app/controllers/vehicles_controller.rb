@@ -58,6 +58,7 @@ before_action :authenticate_user!
                                 vin_num: params[:vin_num],
                                 vehicle_nickname: params[:vehicle_nickname],
                                 license_state: params[:license_state],
+                                image: params[:image],
                                 license_number: params[:license_number])
 
     flash[:success] = "Vehicle Updated"

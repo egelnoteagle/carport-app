@@ -1,5 +1,5 @@
 class Vehicle < ApplicationRecord
-  has_attached_file :image, styles: { medium: "300x300#", thumb: "100x100#" }, default_url: "/app/assets/images/:style/defaultcar.png"
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100#" }, default_url: "https://wsa1.pakwheels.com/assets/default-display-image-car-638815e7606c67291ff77fd17e1dbb16.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   belongs_to :user
