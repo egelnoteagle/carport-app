@@ -26,7 +26,8 @@ before_action :authenticate_user!
                         vehicle_nickname: params[:vehicle_nickname],
                         license_state: params[:license_state],
                         license_number: params[:license_number],
-                        user_id: current_user.id
+                        user_id: current_user.id,
+                        image: params[:image]
                         )
     @vehicle.save
     @vehicle_id = @vehicle.id
