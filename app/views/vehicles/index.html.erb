@@ -3,6 +3,7 @@
   <% @vehicles.each do |vehicle| %>
     <div class="col-md-4">
       <ul>
+        <li><%= image_tag vehicle.image.url(:medium) %></li>
         <li><h4><%= link_to vehicle.vehicle_nickname, "/vehicles/#{vehicle.id}" %></h4></li>
         <li><b>Vehicle:  </b><%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model %> </li>
         <li><b>Trim: </b><%= vehicle.trim %></li>

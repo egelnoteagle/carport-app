@@ -1,6 +1,6 @@
 <h1>Edit Your Vehicle</h1>
 <br>
-<%= form_tag "/vehicles/#{@vehicle.id}", method: :patch do %>
+<%= form_tag "/vehicles/#{@vehicle.id}", method: :patch, multipart: true do %>
   <div>
     <%= label_tag :vehicle_nickname %>
     <%= text_field_tag :vehicle_nickname, @vehicle.vehicle_nickname %>
@@ -37,6 +37,11 @@
   <div>
     <%= label_tag :license_number %>
     <%= text_field_tag :license_number, @vehicle.license_number %>
+  </div>
+  <br>
+  <div>
+    <%= label_tag "Edit Vehicle Image: " %>
+    <%= file_field_tag :image %>
   </div>
   <div>
     <%= submit_tag "Submit" %>

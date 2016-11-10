@@ -1,6 +1,6 @@
 <h1>Add A New Vehicle To Your Garage</h1>
 
-<%= form_tag '/vehicles', method: :post do %>
+<%= form_tag '/vehicles', method: :post, multipart: true do %>
   <div>
     <%= label_tag :vehicle_nickname %>
     <%= text_field_tag :vehicle_nickname %>
@@ -23,6 +23,11 @@
   <div>
     <%= label_tag :mileage_reading %>
     <%= text_field_tag :mileage_reading %>
+  </div>
+  <br>
+  <div>
+    <%= label_tag "Upload Vehicle Image: " %>
+    <%= file_field_tag :image %>
   </div>
   <div>
     <%= submit_tag "Submit" %>

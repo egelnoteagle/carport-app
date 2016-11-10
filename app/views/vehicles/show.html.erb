@@ -1,4 +1,5 @@
 <ul>
+  <li><%= image_tag @vehicle.image.url(:medium) %></li>
   <li><h4><%= @vehicle.vehicle_nickname.titleize %></h4></li>
   <li><b>Vehicle: </b><%= @vehicle.year %> <%= @vehicle.make %> <%= @vehicle.model %> </li>
   <li><b>Trim: </b><%= @vehicle.trim %></li>
