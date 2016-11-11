@@ -19,6 +19,7 @@ gem 'unirest'
 gem "font-awesome-rails"
 gem 'seed_dump'
 gem "paperclip", "~> 5.0.0"
+gem 'rails_12factor', group: :production
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
