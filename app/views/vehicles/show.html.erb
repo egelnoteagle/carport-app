@@ -8,24 +8,18 @@
   <li><b>License Plate: </b><%= @vehicle.license_state %> <%= @vehicle.license_number %></li>
   <li><b>Vin Number: </b><%= @vehicle.vin_num %></li>
 
-
-
-
   <%= form_tag '/mileages', method: :post do %>
-  <%= hidden_field_tag :vehicle_id, @vehicle.id %>
-  <li><b>Mileage: <%= text_field_tag :mileage_reading, @vehicle.mileages.last.mileage_reading %></b></li>
-  <div>
-      <a class="btn btn-default btn-xs"> <%= submit_tag "Submit New Mileage" %></a>
-    </div>
+    <%= hidden_field_tag :vehicle_id, @vehicle.id %>
+    <li><b>Mileage: <%= text_field_tag :mileage_reading, @vehicle.mileages.last.mileage_reading %></b></li>
+    <a> <%= submit_tag "Submit New Mileage" %></a>
   <% end %>
 </ul>
 
 <br>
-<a class="btn btn-default btn-xs" href= "<%= "/vehicles/#{@vehicle.id}/edit" %>" role="button">Edit Vehicle Details</a>
-<br>
-<br>
-<%= link_to 'Delete Vehicle', "/vehicles/#{@vehicle.id}", method: :delete, class:  "btn btn-default btn-xs" %>
-<br>
-<br>
-<a class="btn btn-default btn-xs" href= "<%= "/vehicles/#{@vehicle.id}/recalls" %>" role="button">Check Vehicle Recalls</a>
+<div>
+  <a  href= "<%= "/vehicles/#{@vehicle.id}/edit" %>" role="button">Edit Vehicle Details</a>  | 
 
+  <%= link_to 'Delete Vehicle', "/vehicles/#{@vehicle.id}", method: :delete %>  | 
+  
+  <a  href= "<%= "/vehicles/#{@vehicle.id}/recalls" %>" role="button">Check Vehicle Recalls</a>
+</div>
