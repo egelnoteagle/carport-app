@@ -93,7 +93,7 @@
                   <ul class="list-inline hidden-sm hidden-xs">
                     <li><i class="fa fa-map-marker pr-5 pl-10"></i>1733 W. Irving Park Rd, Chicago IL 60613</li>
                     <li><i class="fa fa-phone pr-5 pl-10"></i>773 726 1212</li>
-                    <li><i class="fa fa-envelope-o pr-5 pl-10"></i> egelnoteagle@gmail.com</li>
+                    <li><a href="mailto:egelnoteagle@gmail.com"><i class="fa fa-envelope-o pr-10"></i>egelnoteagle@gmail.com</a></li>
                   </ul>
                 </div>
                 <!-- header-top-first end -->
@@ -107,12 +107,18 @@
                   <!-- header top dropdowns start -->
                   <!-- ================ -->
                   <div class="header-top-dropdown text-right">
-                    <div class="btn-group">
-                      <a href="/signup" class="btn btn-default btn-sm"><i class="fa fa-user pr-10"></i> Sign Up</a>
-                    </div>
-                    <div class="btn-group">
-                      <a href="/login" class="btn btn-default btn-sm"><i class="fa fa-lock pr-10"></i> Login</a>
-                    </div>
+                    <% if current_user %>
+                      <div class="btn-group">
+                      <%= link_to raw('<i class="fa fa-user pr-10"></i> Log Out'), '/logout', method: :delete, class: "btn btn-default btn-sm" %>  
+                      </div>
+                    <% else %>
+                      <div class="btn-group">
+                        <a href="/signup" class="btn btn-default btn-sm"><i class="fa fa-user pr-10"></i> Sign Up</a>
+                      </div>
+                      <div class="btn-group">
+                        <a href="/login" class="btn btn-default btn-sm"><i class="fa fa-lock pr-10"></i> Login</a>
+                      </div>
+                    <% end %>
                   </div>
                   <!--  header top dropdowns end -->
                 </div>
@@ -827,19 +833,17 @@
                   <div class="footer-content">
                     <h2 class="title">Find Us</h2>
                     <div class="separator-2"></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium odio voluptatem necessitatibus illo vel dolorum soluta.</p>
+                    <p>If you're interested in custom built web sites or web apps please contact us!</p>
                     <ul class="social-links circle animated-effect-1">
-                      <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
-                      <li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
-                      <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
-                      <li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
-                      <li class="xing"><a target="_blank" href="http://www.xing.com"><i class="fa fa-xing"></i></a></li>
+                      <li class="facebook"><a target="_blank" href="http://www.facebook.com/derekegel"><i class="fa fa-facebook"></i></a></li>
+                      <li class="twitter"><a target="_blank" href="http://www.twitter.com/degel55"><i class="fa fa-twitter"></i></a></li>
+                      <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/derekegel"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
                     <div class="separator-2"></div>
                     <ul class="list-icons">
-                      <li><i class="fa fa-map-marker pr-10 text-default"></i> 1733 W. Irving Park Rd., 60613</li>
-                      <li><i class="fa fa-phone pr-10 text-default"></i> +00 1234567890</li>
-                      <li><a href="mailto:info@theproject.com"><i class="fa fa-envelope-o pr-10"></i>info@theproject.com</a></li>
+                      <li><i class="fa fa-map-marker pr-10 text-default"></i> 1733 W. Irving Park Rd. Chicago, IL 60613</li>
+                      <li><i class="fa fa-phone pr-10 text-default"></i> 773 726 1212</li>
+                      <li><a href="mailto:egelnoteagle@gmail.com"><i class="fa fa-envelope-o pr-10"></i>egelnoteagle@gmail.com</a></li>
                     </ul>
                   </div>
                 </div>
@@ -856,7 +860,7 @@
             <div class="subfooter-inner">
               <div class="row">
                 <div class="col-md-12">
-                  <p class="text-center">Copyright © 2016 The Project by <a target="_blank" href="http://htmlcoder.me">HtmlCoder</a>. All Rights Reserved</p>
+                  <p class="text-center">Copyright © 2016 CarPort by <a target="_blank" href="https://github.com/egelnoteagle/">Derek Egel</a>. All Rights Reserved</p>
                 </div>
               </div>
             </div>
@@ -868,25 +872,6 @@
       <!-- footer end -->
       
     </div>
-    <!-- page-wrapper end -->
-
-    <!-- JavaScript files placed at the end of the document so the pages load faster -->
-    <!-- ================================================== -->
-    <!-- Jquery and Bootstap core js files -->
-    <!-- Modernizr javascript -->
-    <!-- jQuery Revolution Slider  -->
-    <!-- Isotope javascript -->
-    <!-- Magnific Popup javascript -->
-    <!-- Appear javascript -->
-    <!-- Count To javascript -->
-    <!-- Parallax javascript -->
-    <!-- Contact form -->
-    <!-- Background Video -->
-    <!-- Owl carousel javascript -->
-    <!-- SmoothScroll javascript -->
-    <!-- Initialization of Plugins -->
-    <!-- Custom Scripts -->
-
   </body>
 </html>
 
