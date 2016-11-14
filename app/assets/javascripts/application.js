@@ -30,6 +30,9 @@
 //= require owl.carousel
 //= require jquery.browser
 //= require SmoothScroll
+//= require jquery.plugin
+//= require jquery.countdown
+//= require coming.soon.config
 //= require template
 //= require custom
 //= require app
