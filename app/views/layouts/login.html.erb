@@ -36,7 +36,6 @@
   <!-- "gradient-background-header": applies gradient background to header -->
   <!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
   <body class="no-trans    ">
-
     <!-- scrollToTop -->
     <!-- ================ -->
     <div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>
@@ -52,6 +51,7 @@
       <!-- ================ -->
       <div class="pv-40 dark-translucent-bg">
         <div class="container">
+    <%= yield %>
           <div class="object-non-visible text-center" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
             <!-- logo -->
             <div id="logo" class="logo">
@@ -62,6 +62,7 @@
             <div class="form-block center-block p-30 light-gray-bg border-clear">
               <h2 class="title text-left">Login</h2>
               <form class="form-horizontal text-left">
+                <%= form_tag '/login', method: :post do %>
                 <div class="form-group has-feedback">
                   <label for="inputUserName" class="col-sm-3 control-label">Email</label>
                   <div class="col-sm-8">
@@ -95,6 +96,7 @@
                     </ul>
                   </div>
                 </div>
+                <% end %>
               </form>
               <p>Don't have an account yet? <a href="/signup">Sign up</a> now.</p>
             </div>
