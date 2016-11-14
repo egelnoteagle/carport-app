@@ -21,6 +21,7 @@
  *= require owl.transitions
  *= require hover-min
  *= require skins/purple
+ *= require jquery.countdown
  *= require custom
  *= require_tree .
  *= require_self
