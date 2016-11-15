@@ -2,7 +2,7 @@ class VehiclesController < ApplicationController
 before_action :authenticate_user!
 
   def index
-    @vehicles = current_user.vehicles
+    @vehicles = current_user.vehicles 
   end
 
   def show

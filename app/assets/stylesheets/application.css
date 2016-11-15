@@ -10,9 +10,21 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap
+ *= require font-awesome
+ *= require fontello
+ *= require style
+ *= require typography-default
+ *= require magnific-popup
+ *= require settings
+ *= require animations
+ *= require owl.carousel
+ *= require owl.transitions
+ *= require hover-min
+ *= require skins/purple
+ *= require jquery.countdown
+ *= require custom
  *= require_tree .
  *= require_self
- *= require style
- *= require font-awesome
  */
 
