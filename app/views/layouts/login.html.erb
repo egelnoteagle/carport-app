@@ -51,7 +51,6 @@
       <!-- ================ -->
       <div class="pv-40 dark-translucent-bg">
         <div class="container">
-    <%= yield %>
           <div class="object-non-visible text-center" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
             <!-- logo -->
             <div id="logo" class="logo">
@@ -61,43 +60,8 @@
             <p class="small">A Website For Your Car</p>
             <div class="form-block center-block p-30 light-gray-bg border-clear">
               <h2 class="title text-left">Login</h2>
-              <form class="form-horizontal text-left">
-                <%= form_tag '/login', method: :post do %>
-                <div class="form-group has-feedback">
-                  <label for="inputUserName" class="col-sm-3 control-label">Email</label>
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control" id="inputUserName" placeholder="User Name" required>
-                    <i class="fa fa-user form-control-feedback"></i>
-                  </div>
-                </div>
-                <div class="form-group has-feedback">
-                  <label for="inputPassword" class="col-sm-3 control-label">Password</label>
-                  <div class="col-sm-8">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
-                    <i class="fa fa-lock form-control-feedback"></i>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-3 col-sm-8">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" required> Remember me.
-                      </label>
-                    </div>
-                    <button type="submit" class="btn btn-group btn-default btn-animated">Log In <i class="fa fa-user"></i></button>
-                    <ul class="space-top">
-                      <li><a href="#">Forgot your password?</a></li>
-                    </ul>
-                    <span class="text-muted">Login with</span>
-                    <ul class="social-links colored circle clearfix">
-                      <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
-                      <li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
-                      <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <% end %>
-              </form>
+              <%= yield %>
+              
               <p>Don't have an account yet? <a href="/signup">Sign up</a> now.</p>
             </div>
             <!-- .subfooter start -->
