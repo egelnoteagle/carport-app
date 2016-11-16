@@ -65,150 +65,35 @@
               <p class="lead">Welcome to your Garage! Here you can choose which car you'd like to view, edit, or update.</p>
 
               <div class="isotope-container row grid-space-10">
+                <% @vehicles.each do |vehicle| %>
                 <div class="col-md-4 col-sm-6 isotope-item web-design">
-                  <div id="carousel-portfolio" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                      <li data-target="#carousel-portfolio" data-slide-to="0" class="active"></li>
-                      <li data-target="#carousel-portfolio" data-slide-to="1"></li>
-                      <li data-target="#carousel-portfolio" data-slide-to="2"></li>
-                    </ol>
-
-                    <!-- Wrapper for slides -->
-                    
-
-
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-6 isotope-item app-development">
-                  <div class="image-box shadow bordered text-center mb-20">
-                    <div class="overlay-container">
-                      <%= image_tag "portfolio-1.jpg" %>
-                      <div class="overlay-top">
-                        <div class="text">
-                          <h3><a href="portfolio-item.html">Project Title</a></h3>
-                          <p class="small">App Development</p>
-                        </div>
-                      </div>
-                      <div class="overlay-bottom">
-                        <div class="links">
-                          <a href="portfolio-item.html" class="btn btn-gray-transparent btn-animated btn-sm">View Details <i class="pl-10 fa fa-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
                 <div class="col-md-4 col-sm-6 isotope-item web-design">
                   <div class="image-box shadow bordered text-center mb-20">
                     <div class="overlay-container">
-                      <%= image_tag "portfolio-4.jpg" %>
+                      <%= image_tag vehicle.image.url(:medium) %>
                       <div class="overlay-top">
                         <div class="text">
-                          <h3><a href="portfolio-item.html">Project Title</a></h3>
-                          <p class="small">Web Design</p>
+                          <h3><%= link_to vehicle.vehicle_nickname, "/vehicles/#{vehicle.id}" %></h3>
                         </div>
                       </div>
                       <div class="overlay-bottom">
                         <div class="links">
-                          <a href="portfolio-item.html" class="btn btn-gray-transparent btn-animated btn-sm">View Details <i class="pl-10 fa fa-arrow-right"></i></a>
+                          <%= link_to raw('<i class="pl-10 fa fa-arrow-right"></i> View Details'), "/vehicles/#{vehicle.id}" %>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4 col-sm-6 isotope-item site-building">
-                  <div class="image-box shadow bordered text-center mb-20">
-                    <div class="overlay-container">
-                      <%= image_tag "portfolio-1.jpg" %>
-                      <div class="overlay-top">
-                        <div class="text">
-                          <h3><a href="portfolio-item.html">Project Title</a></h3>
-                          <p class="small">Site Building</p>
-                        </div>
-                      </div>
-                      <div class="overlay-bottom">
-                        <div class="links">
-                          <a href="portfolio-item.html" class="btn btn-gray-transparent btn-animated btn-sm">View Details <i class="pl-10 fa fa-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-6 isotope-item app-development">
-                  <div class="image-box shadow bordered text-center mb-20">
-                    <div class="overlay-container">
-                      <%= image_tag "portfolio-1.jpg" %>
-                      <div class="overlay-top">
-                        <div class="text">
-                          <h3><a href="portfolio-item.html">Project Title</a></h3>
-                          <p class="small">App Development</p>
-                        </div>
-                      </div>
-                      <div class="overlay-bottom">
-                        <div class="links">
-                          <a href="portfolio-item.html" class="btn btn-gray-transparent btn-animated btn-sm">View Details <i class="pl-10 fa fa-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-6 isotope-item site-building">
-                  <div class="image-box shadow bordered text-center mb-20">
-                    <div class="overlay-container">
-                      <%= image_tag "portfolio-1.jpg" %>
-                      <div class="overlay-top">
-                        <div class="text">
-                          <h3><a href="portfolio-item.html">Project Title</a></h3>
-                          <p class="small">Site Building</p>
-                        </div>
-                      </div>
-                      <div class="overlay-bottom">
-                        <div class="links">
-                          <a href="portfolio-item.html" class="btn btn-gray-transparent btn-animated btn-sm">View Details <i class="pl-10 fa fa-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-6 isotope-item web-design">
-                  <div class="image-box shadow bordered text-center mb-20">
-                    <div class="overlay-container">
-                      <%= image_tag "portfolio-1.jpg" %>
-                      <div class="overlay-top">
-                        <div class="text">
-                          <h3><a href="portfolio-item.html">Project Title</a></h3>
-                          <p class="small">Web Design</p>
-                        </div>
-                      </div>
-                      <div class="overlay-bottom">
-                        <div class="links">
-                          <a href="portfolio-item.html" class="btn btn-gray-transparent btn-animated btn-sm">View Details <i class="pl-10 fa fa-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <% end %>
               </div>
-
             </div>
-            <!-- main end -->
-
+          </div>
+          <div>
+            <a class="btn btn-default" href="/vehicles/new" role="button">Add New Vehicle</a>
           </div>
         </div>
       </section>
-      <!-- main-container end -->
-      
     </div>
-    <!-- page-wrapper end -->
-
   </body>
 </html>
-  
-<div class="row">
-  
-</div>
-<br>
-<div>
-  <a class="btn btn-primary btn-sm" href="/vehicles/new" role="button">Add New Vehicle</a>
-</div>
