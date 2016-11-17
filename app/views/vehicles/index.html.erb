@@ -1,21 +1,99 @@
-<h3><%= current_user.first_name %>'s Garage</h3>
-<div class="row">
-  <% @vehicles.each do |vehicle| %>
-    <div class="col-md-4">
-      <ul>
-        <li><%= image_tag vehicle.image.url(:medium) %></li>
-        <li><h4><%= link_to vehicle.vehicle_nickname, "/vehicles/#{vehicle.id}" %></h4></li>
-        <li><b>Vehicle:  </b><%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model %> </li>
-        <li><b>Trim: </b><%= vehicle.trim %></li>
-        <li><b>Style: </b><%= vehicle.style %></li>
-        <li><b>Color: </b><%= vehicle.color %></li>
-        <li><b>License: </b><%= vehicle.license_state %> <%= vehicle.license_number %></li>
-        <li><b>VIN #: </b><%= vehicle.vin_num %></li>
-      </ul>
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if gt IE 9]> <html lang="en" class="ie"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <title>CarPort | MyGarage</title>
+    <meta name="description" content="CarPort">
+    <meta name="author" content="">
+
+    <!-- Mobile Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Favicon -->
+     <%= favicon_link_tag "favicon.ico" %>
+
+    <!-- Web Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <!-- body classes:  -->
+  <!-- "boxed": boxed layout mode e.g. <body class="boxed"> -->
+  <!-- "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> -->
+  <!-- "transparent-header": makes the header transparent and pulls the banner to top -->
+  <!-- "gradient-background-header": applies gradient background to header -->
+  <!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
+  <body class="no-trans    ">
+
+    <!-- scrollToTop -->
+    <!-- ================ -->
+    <div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>
+    
+    <!-- page wrapper start -->
+    <!-- ================ -->
+    <div class="page-wrapper">
+
+      <!-- main-container start -->
+      <!-- ================ -->
+      <section class="main-container">
+
+        <div class="container">
+          <div class="row">
+
+            <!-- main start -->
+            <!-- ================ -->
+            <div class="main col-md-12">
+
+              <!-- page-title start -->
+              <!-- ================ -->
+              <h1 class="page-title"><%= current_user.first_name %>'s Garage</h1>
+              <div class="separator-2"></div>
+              <!-- page-title end -->
+              <p class="lead">Welcome to your Garage! Here you can choose which car you'd like to view, edit, or update.</p>
+
+              <div class="isotope-container row grid-space-10">
+                <% @vehicles.each do |vehicle| %>
+                <div class="col-md-4 col-sm-6 isotope-item web-design">
+                </div>
+                <div class="col-md-4 col-sm-6 isotope-item web-design">
+                  <div class="image-box shadow bordered text-center mb-20">
+                    <div class="overlay-container">
+                      <%= image_tag vehicle.image.url(:thumb) %>
+                      <div class="overlay-top">
+                        <div class="text">
+                          <h3><%= link_to vehicle.vehicle_nickname, "/vehicles/#{vehicle.id}" %></h3>
+                        </div>
+                      </div>
+                      <div class="overlay-bottom">
+                        <div class="links">
+                          <%= link_to raw('<i class="pl-10 fa fa-arrow-right"></i> View Details'), "/vehicles/#{vehicle.id}" %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div>
+            <a class="btn btn-default" href="/vehicles/new" role="button">Add New Vehicle</a>
+          </div>
+        </div>
+      </section>
     </div>
-  <% end %>
-</div>
-<br>
-<div>
-  <a class="btn btn-primary btn-sm" href="/vehicles/new" role="button">Add New Vehicle</a>
-</div>
+  </body>
+</html>
